@@ -3,7 +3,7 @@ const express = require("express");
 const cors = require("cors");
 const bank = require("./questions");
 const { runAssessmentAutomaton } = require("./automata");
-
+const connectDB = require("./db");
 const app = express();
 app.use(cors({ origin: process.env.CLIENT_URL ? process.env.CLIENT_URL.split(",") : true }));
 app.use(express.json());
@@ -60,4 +60,6 @@ app.post("/api/quiz/evaluate", (req, res) => {
 });
 
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`Quiz API running on port ${PORT}`));
+connectDB().then(() => {
+  app.listen(PORT, () => console.log(`Quiz API running on port ${PORT}`));
+});
