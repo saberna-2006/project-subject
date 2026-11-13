@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useState } from "react";
 
-const API = import.meta.env.VITE_API_URL || "http://localhost:5000/api";
+const API = import.meta.env.VITE_API_URL || "https://quiz-automata-backend.onrender.com/api";
 const subjects = [
   { id: "FSWD", name: "Full Stack Web Development", detail: "HTML • CSS • JavaScript • React • Node.js • Express • MongoDB", icon: "💻" },
   { id: "CN", name: "Computer Networks", detail: "OSI • TCP/IP • DNS • HTTP • TCP/UDP • Routing", icon: "🌐" },
