@@ -4,6 +4,7 @@ const cors = require("cors");
 const bank = require("./questions");
 const { runAssessmentAutomaton } = require("./automata");
 const connectDB = require("./db");
+const Result = require("./models/Result");
 const app = express();
 app.use(cors({ origin: process.env.CLIENT_URL ? process.env.CLIENT_URL.split(",") : true }));
 app.use(express.json());
