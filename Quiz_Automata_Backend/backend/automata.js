@@ -16,7 +16,7 @@ function runAssessmentAutomaton(events) {
     state = next;
   }
   return {
-    accepted: state === "EVALUATED",
+    accepted: state === "QUIZ_ACTIVE" || state === "EVALUATED",
     state,
     message: state === "EVALUATED"
       ? "Accepted sequence: START → SUBJECT_SELECTED → QUIZ_ACTIVE → SUBMITTED → EVALUATED."
